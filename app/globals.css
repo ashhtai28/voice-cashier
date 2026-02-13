@@ -1,0 +1,122 @@
+/* ── Global Reset + Theme ── */
+
+:root {
+  /* ── 5-band palette (light → dark) ── */
+  --foam: #efe6da;       /* lightest — page bg */
+  --cream: #e3d7c9;      /* band 1 — cards, surfaces */
+  --oat: #d9ccbc;         /* between 1 & 2 */
+  --latte: #cdb9a4;       /* band 2 — warm mid-light */
+  --toffee: #b8a08a;      /* between 2 & 3 */
+  --mocha: #a68e74;       /* band 3 — mid tone */
+  --hazelnut: #8d7358;    /* between 3 & 4 */
+  --dark-roast: #755c42;  /* band 4 — dark accent */
+  --espresso: #3b2a1a;    /* band 5 — darkest */
+
+  /* ── Derived accent tones ── */
+  --accent: #b8a08a;      /* matches toffee — primary accent */
+  --accent-light: #d1c0ad;
+  --peach: #d5c4b0;
+  --warmgray: #c4b6a6;
+  --sage: #9aa68e;         /* green-tint for "completed" status */
+  --charcoal: #4a4340;    /* dark neutral for contrast elements */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  background: var(--foam);
+  color: var(--espresso);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--dark-roast);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Global Nav Bar ── */
+.global-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 48px;
+  background: var(--espresso);
+  color: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-brand {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--cream);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-brand:hover {
+  text-decoration: none;
+  color: var(--latte);
+}
+.nav-links {
+  display: flex;
+  gap: 0.2rem;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 10px;
+  color: var(--latte);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cream);
+  text-decoration: none;
+}
+.nav-link.active {
+  background: var(--dark-roast);
+  color: var(--cream);
+  font-weight: 600;
+}
+.nav-link svg {
+  flex-shrink: 0;
+}
+.nav-label {
+  line-height: 1;
+}
+
+/* Page content sits below the global nav */
+.page-content {
+  min-height: calc(100dvh - 48px);
+}
+
+/* On small screens, make nav links compact */
+@media (max-width: 420px) {
+  .nav-link {
+    padding: 0.3rem 0.45rem;
+    gap: 0.2rem;
+    font-size: 0.72rem;
+  }
+  .nav-brand {
+    font-size: 0.88rem;
+  }
+}

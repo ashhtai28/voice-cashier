@@ -1,0 +1,252 @@
+/* ── Orders View ── */
+
+.orders-page {
+  min-height: calc(100dvh - 48px);
+  background: var(--oat);
+  padding: 1rem;
+}
+
+.orders-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--foam);
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(60, 36, 21, 0.08), 0 0 0 1px rgba(60, 36, 21, 0.04);
+  overflow: hidden;
+  min-height: calc(100dvh - 48px - 2rem);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.orders-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--dark-roast);
+  color: var(--cream);
+  border-radius: 20px 20px 0 0;
+}
+.orders-header h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+.orders-count {
+  background: var(--accent);
+  color: var(--foam);
+  font-family: "Fredoka", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 10px;
+}
+
+/* Tabs */
+.orders-tabs {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  background: var(--cream);
+  border-bottom: 2px solid var(--oat);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+.tab {
+  flex: 1;
+  padding: 0.5rem 0.4rem;
+  border: none;
+  background: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--mocha);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.12s, border-color 0.12s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.tab:hover {
+  color: var(--espresso);
+}
+.tab.active {
+  color: var(--espresso);
+  border-bottom-color: var(--espresso);
+  font-weight: 600;
+}
+.tab-count {
+  font-size: 0.68rem;
+  background: var(--cream);
+  color: var(--dark-roast);
+  padding: 0.1rem 0.35rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.tab.active .tab-count {
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+/* Orders list */
+.orders-list {
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.orders-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--mocha);
+  font-size: 0.88rem;
+}
+
+/* Order card */
+.order-card {
+  background: var(--cream);
+  border: 1.5px solid var(--oat);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  transition: border-color 0.15s;
+}
+.order-card.pending {
+  border-left: 3px solid var(--accent);
+}
+.order-card.in_progress {
+  border-left: 3px solid var(--toffee);
+}
+.order-card.completed {
+  border-left: 3px solid var(--sage);
+  opacity: 0.7;
+}
+
+.order-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.15rem;
+}
+
+.order-id {
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+.status-badge {
+  font-family: "Fredoka", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.status-badge.pending {
+  background: var(--accent-light, #ddc1b8);
+  color: var(--espresso);
+}
+.status-badge.in_progress {
+  background: var(--peach);
+  color: var(--espresso);
+}
+.status-badge.completed {
+  background: var(--sage);
+  color: var(--espresso);
+}
+
+.order-time {
+  font-size: 0.72rem;
+  color: var(--mocha);
+  margin-bottom: 0.35rem;
+}
+
+/* Order items */
+.order-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.4rem;
+}
+.order-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.15rem 0;
+  font-size: 0.78rem;
+  color: var(--espresso);
+  border-bottom: 1px solid var(--cream);
+}
+.order-item:last-child {
+  border-bottom: none;
+}
+.order-item-type {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--hazelnut);
+}
+.order-item-label {
+  text-transform: capitalize;
+}
+
+/* Action buttons */
+.order-action {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 8px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.12s;
+}
+.order-action:hover {
+  transform: translateY(-1px);
+}
+.order-action:active {
+  transform: scale(0.98);
+}
+.order-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.order-action.in_progress {
+  background: var(--toffee);
+  color: var(--foam);
+}
+.order-action.completed {
+  background: var(--sage);
+  color: var(--espresso);
+}
+
+/* ── Desktop: multi-column order grid ── */
+@media (min-width: 768px) {
+  .orders-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    align-content: start;
+  }
+  .orders-empty {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 1024px) {
+  .orders-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

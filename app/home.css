@@ -1,0 +1,1064 @@
+/* ── Landing Page — Warm Brown/Cream Palette ── */
+
+.landing {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  padding-bottom: 60px; /* space for drawer tab */
+}
+/* Prevent horizontal scrollbar when hero breaks out on desktop */
+html { overflow-x: hidden; }
+.landing.drawer-open {
+  overflow: hidden;
+  height: 100dvh;
+}
+
+/* ── Top Nav ── */
+
+/* ── Squiggle dividers ── */
+.squiggle {
+  display: block;
+  width: 100%;
+  height: 20px;
+  margin: -1px 0;
+}
+.squiggle.thick {
+  height: 30px;
+  margin: 1.5rem auto;
+  max-width: 400px;
+  opacity: 0.7;
+}
+
+/* ── Latte Art Swirl elements ── */
+.latte-swirl {
+  display: block;
+  flex-shrink: 0;
+}
+
+.hero-latte-art {
+  margin: 0 auto 1rem;
+  opacity: 0.25;
+  animation: spin-slow 30s linear infinite;
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-swirls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.swirl-corner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0.6;
+}
+.swirl-corner-top-left { top: 0; left: 0; }
+.swirl-corner-top-right { top: 0; right: 0; }
+.swirl-corner-bottom-left { bottom: 0; left: 0; }
+.swirl-corner-bottom-right { bottom: 0; right: 0; }
+
+/* Section header with swirl */
+.section-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.section-swirl {
+  margin: 0 auto 0.5rem;
+  opacity: 0.5;
+}
+
+/* Swirl divider */
+.swirl-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.swirl-line {
+  width: 80%;
+  max-width: 400px;
+  height: 40px;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  background: var(--espresso);
+  color: var(--cream);
+  padding: 3rem 1.5rem 4.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--foam);
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(2.4rem, 7vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.hero h1 .wiggle {
+  display: inline-block;
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(4deg); }
+  75% { transform: rotate(-4deg); }
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  opacity: 0.75;
+  max-width: 340px;
+  margin: 0 auto 1.8rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--foam);
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 20px rgba(201, 163, 150, 0.25);
+}
+.hero-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 28px rgba(201, 163, 150, 0.4);
+  text-decoration: none;
+}
+.hero-cta .cta-arrow {
+  font-size: 1.3rem;
+  transition: transform 0.15s;
+}
+.hero-cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+/* (floating beans replaced by swirl corners — see .hero-swirls above) */
+
+/* ── Menu Section ── */
+.menu-section {
+  padding: 2.5rem 1.5rem 2.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  color: var(--espresso);
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--mocha);
+  margin-bottom: 1.8rem;
+  font-size: 0.92rem;
+}
+
+/* ── Drink cards ── */
+.drink-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.drink-card {
+  background: var(--cream);
+  border: 2px solid var(--oat);
+  border-radius: 14px;
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.drink-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(60, 36, 21, 0.1);
+}
+.drink-card:active {
+  transform: translateY(-1px);
+}
+
+.drink-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.drink-name {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--espresso);
+  line-height: 1.2;
+}
+
+.drink-desc {
+  font-size: 0.72rem;
+  color: var(--mocha);
+}
+
+.drink-price {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+/* Hide temp note in compact horizontal layout */
+.drink-temp {
+  display: none;
+}
+
+/* ── Add-Ons grid ── */
+.addon-grid {
+  display: grid;
+  gap: 0;
+  margin-bottom: 1.8rem;
+  background: var(--cream);
+  border: 2px solid var(--oat);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.addon-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--oat);
+}
+.addon-row:last-child {
+  border-bottom: none;
+}
+.addon-price {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.modifier-tags {
+  margin-top: 1.5rem;
+}
+
+/* ── Squiggle double ── */
+.squiggle-double {
+  display: block;
+  width: 70%;
+  max-width: 360px;
+  height: 30px;
+  margin: 1.5rem auto 2rem;
+}
+
+/* ── Size picker modal ── */
+.size-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.size-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 1rem;
+  border: 2px solid var(--oat);
+  border-radius: 14px;
+  background: var(--cream);
+  cursor: pointer;
+  transition: all 0.12s;
+  font-family: inherit;
+}
+.size-btn:hover {
+  border-color: var(--accent);
+}
+.size-btn.active {
+  border-color: var(--espresso);
+  background: var(--espresso);
+  color: var(--cream);
+}
+.size-label {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.size-oz {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+.size-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+}
+.size-btn.active .size-price {
+  color: var(--accent);
+}
+.modal-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--mocha);
+  margin-bottom: 0.8rem;
+}
+
+/* ── Drink card extra styles ── */
+
+.options-group {
+  margin-bottom: 1.4rem;
+}
+.options-group-title {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-roast);
+}
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.tag {
+  display: inline-block;
+  padding: 0.32rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.tag.light { background: var(--cream); color: var(--dark-roast); border: 1px solid var(--oat); }
+.tag.warm  { background: var(--peach); color: var(--espresso); }
+.tag.cool  { background: var(--oat); color: var(--espresso); }
+.tag.tan   { background: var(--latte); color: var(--espresso); }
+
+/* ── Bottom CTA ── */
+.bottom-cta {
+  text-align: center;
+  padding: 2.5rem 1.5rem 2rem;
+  background: var(--cream);
+}
+.bottom-cta p {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+}
+.bottom-cta .hero-cta {
+  background: var(--espresso);
+  color: var(--cream);
+  box-shadow: 0 4px 20px rgba(60, 36, 21, 0.2);
+}
+.bottom-cta .hero-cta:hover {
+  box-shadow: 0 6px 28px rgba(60, 36, 21, 0.35);
+}
+
+/* staff-links removed — now in top-nav */
+
+/* ── Customization Modal ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(60, 36, 21, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.15s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--foam);
+  border-radius: 24px 24px 0 0;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 480px;
+  max-height: 85dvh;
+  overflow-y: auto;
+  animation: slideUp 0.2s ease;
+  position: relative;
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--mocha);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem;
+}
+
+.modal-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.modal-group {
+  margin-bottom: 1rem;
+}
+.modal-group label {
+  display: block;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--dark-roast);
+  margin-bottom: 0.4rem;
+  text-transform: capitalize;
+}
+
+.modal-options {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.modal-options.shots {
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.opt-btn {
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--oat);
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.12s;
+  text-transform: capitalize;
+}
+.opt-btn:hover {
+  border-color: var(--accent);
+}
+.opt-btn.active {
+  background: var(--espresso);
+  color: var(--cream);
+  border-color: var(--espresso);
+}
+.opt-btn.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.shot-count {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 1.5rem;
+  text-align: center;
+  color: var(--espresso);
+}
+
+.modal-price {
+  text-align: center;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 1rem 0 0.8rem;
+}
+
+/* ── Quantity picker (modal) ── */
+.modal-qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 0.5rem;
+}
+.qty-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 2px solid var(--oat);
+  background: var(--cream);
+  color: var(--espresso);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+  font-family: inherit;
+  line-height: 1;
+}
+.qty-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+.qty-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.qty-value {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  min-width: 1.5rem;
+  text-align: center;
+  color: var(--espresso);
+}
+
+/* ── Quantity controls (cart inline) ── */
+.cart-qty-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  margin-right: 0.4rem;
+}
+.cart-qty-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--oat);
+  background: var(--cream);
+  color: var(--espresso);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.12s;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+}
+.cart-qty-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+.cart-qty-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.cart-qty-value {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  min-width: 1rem;
+  text-align: center;
+}
+
+.add-btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--espresso);
+  color: var(--cream);
+  border: none;
+  border-radius: 14px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(60, 36, 21, 0.2);
+}
+.add-btn:active {
+  transform: scale(0.98);
+}
+
+/* ── Chat Drawer ── */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(59, 42, 26, 0.4);
+  z-index: 79;
+  animation: fadeIn 0.2s ease;
+}
+
+.chat-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  transform: translateY(calc(100% - 52px));
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -4px 24px rgba(60, 36, 21, 0.18);
+}
+.chat-drawer.open {
+  transform: translateY(0);
+}
+
+.drawer-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1rem 0.75rem;
+  background: var(--espresso);
+  border: none;
+  color: var(--cream);
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  gap: 0.4rem;
+  transition: background 0.15s;
+}
+.drawer-tab:hover {
+  background: var(--dark-roast);
+}
+.drawer-pill {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 4px;
+  background: var(--mocha);
+  border-radius: 2px;
+}
+
+.drawer-body {
+  height: 75dvh;
+  background: var(--foam);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ── Cart Panel ── */
+.cart-panel {
+  background: var(--cream);
+  border-bottom: 1px solid var(--oat);
+  flex-shrink: 0;
+}
+.cart-panel-full {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-bottom: none;
+  overflow-y: auto;
+}
+.cart-panel-full .cart-items {
+  flex: 1;
+  overflow-y: auto;
+}
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem 0.4rem;
+}
+.cart-title {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--espresso);
+}
+.cart-clear {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  color: var(--mocha);
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  transition: background 0.12s, color 0.12s;
+}
+.cart-clear:hover {
+  background: var(--oat);
+  color: var(--espresso);
+}
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-top: 1px solid var(--oat);
+  font-size: 0.82rem;
+}
+.cart-item-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--espresso);
+}
+.cart-item-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+.cart-item-price {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.82rem;
+}
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--mocha);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.15rem;
+  border-radius: 4px;
+  transition: color 0.12s, background 0.12s;
+}
+.cart-item-remove:hover {
+  color: var(--espresso);
+  background: var(--oat);
+}
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.85rem;
+  border-top: 1px solid var(--oat);
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--espresso);
+}
+
+/* ── Cart actions (Place Order button) ── */
+.cart-actions {
+  padding: 0.75rem 0.85rem;
+  flex-shrink: 0;
+}
+
+/* ── Empty cart state ── */
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--mocha);
+}
+.cart-empty p:first-child {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--espresso);
+  margin-bottom: 0.4rem;
+}
+.cart-empty-hint {
+  font-size: 0.85rem;
+}
+
+/* ── Order confirmation ── */
+.cart-confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.cart-confirmation h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+}
+.cart-order-id {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  color: var(--mocha);
+  margin-bottom: 0.5rem;
+}
+.cart-order-error {
+  color: var(--accent);
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+}
+.cart-order-total {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* Drawer tab — order summary badge */
+.drawer-tab-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.drawer-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--accent);
+  color: var(--foam);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .chat-drawer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Responsive: side-by-side on wider screens
+   ═══════════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  /* Two-column grid: menu left, chat right */
+  .landing {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: auto 1fr;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-bottom: 0;
+    min-height: calc(100dvh - 48px);
+    overflow-x: visible; /* allow hero box-shadow to extend full width */
+  }
+  .landing.drawer-open {
+    overflow: auto;
+    height: auto;
+  }
+
+  /* Hero spans full width — slim banner on desktop */
+  .hero {
+    grid-column: 1 / -1;
+    padding: 1rem 1.5rem 1.2rem;
+    box-shadow: 0 0 0 100vmax var(--espresso);
+    clip-path: inset(0 -100vmax);
+  }
+  .hero-latte-art {
+    display: none;
+  }
+  .hero h1 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 0;
+  }
+  /* Collapse the <br> so h1 sits on one line */
+  .hero h1 br {
+    display: none;
+  }
+  .hero-badge {
+    display: none;
+  }
+  .hero-sub {
+    display: none;
+  }
+  .hero-cta {
+    display: none;
+  }
+
+  /* Menu column wrapper: holds squiggles + menu-section as a single grid child */
+  .menu-column {
+    grid-column: 1 / 2;
+    min-width: 0; /* prevent grid blowout */
+  }
+
+  /* Hide the squiggle between hero and menu on desktop */
+  .menu-column > .squiggle {
+    display: none;
+  }
+
+  /* Menu section fills the column with tight top padding */
+  .menu-section {
+    max-width: none;
+    padding: 0.5rem 1.5rem 2rem;
+  }
+
+  /* 3-column drink grid on desktop */
+  .drink-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.45rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .drink-card {
+    padding: 0.4rem 0.6rem;
+    border-radius: 12px;
+  }
+  .drink-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .drink-name {
+    font-size: 0.78rem;
+  }
+  .drink-price {
+    font-size: 0.68rem;
+  }
+
+  .section-swirl {
+    display: none;
+  }
+  .section-header {
+    margin-bottom: 0.15rem;
+  }
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.15rem;
+  }
+  .section-sub {
+    margin-bottom: 0.5rem;
+    font-size: 0.82rem;
+  }
+
+  .swirl-divider {
+    padding: 0.6rem 0;
+  }
+
+  /* Tighter add-ons */
+  .addon-grid {
+    margin-bottom: 1rem;
+  }
+  .addon-row {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  .modifier-tags {
+    margin-top: 0.75rem;
+  }
+  .options-group {
+    margin-bottom: 0.8rem;
+  }
+
+  /* Hide the mobile drawer tab and backdrop on desktop */
+  .drawer-backdrop {
+    display: none;
+  }
+  .drawer-tab {
+    display: none;
+  }
+  .drawer-pill {
+    display: none;
+  }
+
+  /* Cart sidebar on the right */
+  .chat-drawer {
+    position: sticky;
+    top: 48px;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    grid-column: 2 / 3;
+    grid-row: 2 / -1;
+    z-index: 1;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    transform: none;
+    transition: none;
+    box-shadow: none;
+    border-left: 1px solid var(--oat);
+    height: calc(100dvh - 48px);
+    overflow: hidden;
+  }
+  .chat-drawer.open {
+    transform: none;
+  }
+
+  .drawer-body {
+    height: 100%;
+  }
+}
+
+/* Extra breathing room on large screens */
+@media (min-width: 1024px) {
+  .landing {
+    grid-template-columns: 1fr 420px;
+    max-width: 1200px;
+  }
+
+  .menu-section {
+    padding: 0.5rem 2rem 2.5rem;
+  }
+
+  .drink-grid {
+    gap: 0.75rem;
+  }
+}

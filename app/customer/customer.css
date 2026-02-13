@@ -1,0 +1,457 @@
+/* ── Customer Chat View (Coffee Theme) ── */
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 48px);
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--foam);
+  position: relative;
+}
+
+/* In sidebar context, fill the full width */
+.drawer-body .chat-container {
+  max-width: none;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--dark-roast);
+  color: var(--cream);
+  flex-shrink: 0;
+}
+.chat-header h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+.header-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+.mode-toggle {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+  color: var(--cream);
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.mode-toggle.active {
+  background: var(--accent);
+  color: var(--foam);
+}
+
+/* ── Collapsible Menu Panel ── */
+.menu-panel {
+  background: var(--cream);
+  border-bottom: 1.5px solid var(--oat);
+  padding: 0.6rem 0.8rem 0.5rem;
+  overflow-y: auto;
+  max-height: 45vh;
+  flex-shrink: 0;
+}
+.menu-section {
+  margin-bottom: 0.5rem;
+}
+.menu-section h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--dark-roast);
+  margin: 0 0 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0;
+  font-size: 0.8rem;
+}
+.menu-name {
+  color: var(--espresso);
+}
+.menu-price {
+  color: var(--mocha);
+  font-size: 0.75rem;
+  font-family: monospace;
+  white-space: nowrap;
+}
+.menu-note {
+  font-size: 0.68rem;
+  color: var(--mocha);
+  line-height: 1.4;
+  margin: 0.2rem 0 0;
+  padding-top: 0.3rem;
+  border-top: 1px dashed var(--oat);
+}
+
+/* Messages */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.msg {
+  display: flex;
+}
+.msg.user {
+  justify-content: flex-end;
+}
+.msg.assistant {
+  justify-content: flex-start;
+}
+
+.msg-bubble {
+  max-width: 80%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  word-wrap: break-word;
+}
+
+.msg.user .msg-bubble {
+  background: var(--espresso);
+  color: var(--cream);
+  border-bottom-right-radius: 4px;
+}
+
+.msg.assistant .msg-bubble {
+  background: var(--cream);
+  color: var(--espresso);
+  border: 1px solid var(--oat);
+  border-bottom-left-radius: 4px;
+}
+
+/* Typing indicator */
+.msg-bubble.typing {
+  display: flex;
+  gap: 4px;
+  padding: 0.8rem 1rem;
+}
+.msg-bubble.typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--latte);
+  animation: bounce 1.2s infinite;
+}
+.msg-bubble.typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.msg-bubble.typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
+
+/* Receipt */
+.receipt {
+  margin-top: 0.5rem;
+  padding: 0;
+}
+.receipt-inner {
+  background: var(--cream);
+  border: 2px solid var(--oat);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 16px rgba(60, 36, 21, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+.receipt-inner::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--oat);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.receipt-inner::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 2px solid var(--latte);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.receipt-header {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+.receipt-header h3 {
+  font-family: "Fredoka", sans-serif;
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--espresso);
+}
+.receipt-id {
+  text-align: center;
+  margin: 0.25rem 0 0.75rem;
+  color: var(--mocha);
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+.receipt-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0.25rem 0 0.75rem;
+  color: #b85c3a;
+  font-size: 0.78rem;
+  background: #fdf2e9;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+}
+.receipt ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.receipt li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.45rem 0;
+  font-size: 0.88rem;
+  border-bottom: 1px dashed var(--latte);
+}
+.receipt li:last-child {
+  border-bottom: none;
+}
+.receipt-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+}
+.receipt-item-label {
+  line-height: 1.35;
+  word-break: break-word;
+}
+.receipt-item-unit {
+  font-size: 0.72rem;
+  color: var(--mocha);
+}
+.receipt-item-price {
+  font-family: monospace;
+  white-space: nowrap;
+  margin-left: 1rem;
+  color: var(--dark-roast);
+  font-weight: 500;
+  flex-shrink: 0;
+  padding-top: 0.05rem;
+}
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.6rem;
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  border-top: 2px solid var(--espresso);
+}
+.receipt-time {
+  text-align: center;
+  margin: 0.7rem 0 0;
+  font-size: 0.72rem;
+  color: var(--mocha);
+}
+.new-order-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.7rem;
+  background: var(--accent);
+  color: var(--foam);
+  border: none;
+  border-radius: 12px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.new-order-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 163, 150, 0.3);
+}
+
+/* Mic status feedback */
+.mic-status {
+  font-size: 0.75rem;
+  color: var(--dark-roast);
+  background: var(--oat);
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+/* ── Unified input bar ── */
+.chat-input-area {
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--oat);
+  background: var(--cream);
+  flex-shrink: 0;
+}
+
+.text-input-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Input + inline mic wrapper */
+.input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: var(--foam);
+  border: 1.5px solid var(--latte);
+  border-radius: 12px;
+  transition: border-color 0.15s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.input-wrapper:focus-within {
+  border-color: var(--accent);
+}
+.input-wrapper.recording {
+  border-color: #c0524a;
+  box-shadow: 0 0 0 3px rgba(192, 82, 74, 0.2);
+  animation: pulse-border 1.5s ease-in-out infinite;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: none;
+  font-size: 0.95rem;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  outline: none;
+  background: transparent;
+  color: var(--espresso);
+  min-width: 0;
+}
+.input-wrapper input::placeholder {
+  color: var(--mocha);
+  opacity: 0.6;
+}
+.input-wrapper.recording input {
+  color: var(--dark-roast);
+  font-style: italic;
+}
+.input-wrapper.recording input::placeholder {
+  color: #c0524a;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Inline mic button inside the input */
+.inline-mic-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-right: 4px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--mocha);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.12s, color 0.12s, transform 0.1s;
+}
+.inline-mic-btn:hover {
+  background: var(--oat);
+  color: var(--espresso);
+}
+.inline-mic-btn:active {
+  transform: scale(0.92);
+}
+.inline-mic-btn.active {
+  background: #c0524a;
+  color: #fff;
+  animation: pulse-mic 1.5s ease-in-out infinite;
+}
+.inline-mic-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Send button */
+.send-btn {
+  padding: 0.6rem 1rem;
+  background: var(--espresso);
+  color: var(--cream);
+  border: none;
+  border-radius: 12px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+.send-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Recording animations */
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(192, 82, 74, 0.2); }
+  50% { box-shadow: 0 0 0 6px rgba(192, 82, 74, 0); }
+}
+@keyframes pulse-mic {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(192, 82, 74, 0.35); }
+  50% { box-shadow: 0 0 0 8px rgba(192, 82, 74, 0); }
+}
+
+/* Mobile safe area */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .chat-input-area {
+    padding-bottom: calc(0.6rem + env(safe-area-inset-bottom));
+  }
+}
