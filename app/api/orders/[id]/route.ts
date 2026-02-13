@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getSupabaseService } from "@/lib/supabase";
+import type { Database } from "@/types/database";
 
-type Status = "pending" | "in_progress" | "completed";
+type Status = Database["public"]["Tables"]["orders"]["Row"]["status"];
 
 export async function PATCH(
   _request: Request,
@@ -22,7 +23,7 @@ export async function PATCH(
     const supabase = getSupabaseService();
     const { data, error } = await supabase
       .from("orders")
-      .update({ status })
+      .update({ status: status as Status })
       .eq("id", id)
       .select("id, created_at, updated_at, status, payload")
       .single();
