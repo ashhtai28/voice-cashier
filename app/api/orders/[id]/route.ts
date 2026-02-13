@@ -21,9 +21,10 @@ export async function PATCH(
     }
 
     const supabase = getSupabaseService();
+    const update: Database["public"]["Tables"]["orders"]["Update"] = { status };
     const { data, error } = await supabase
       .from("orders")
-      .update({ status: status as Status })
+      .update(update)
       .eq("id", id)
       .select("id, created_at, updated_at, status, payload")
       .single();
