@@ -1,5 +1,5 @@
 /**
- * Order types matching the real Spill the Beans menu.
+ * Order types matching the NYC Coffee menu.
  */
 
 // ── Drinks ──

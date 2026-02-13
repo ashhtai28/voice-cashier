@@ -252,7 +252,7 @@ const COFFEES: MenuItem[] = [
   { id: "latte", name: "Latte", icon: LatteIcon, small: 4.00, large: 5.00, tempNote: "Hot / Iced" },
   { id: "cold_brew", name: "Cold Brew", icon: ColdBrewIcon, small: 4.00, large: 5.00, tempNote: "Iced only" },
   { id: "mocha", name: "Mocha", icon: MochaIcon, small: 4.50, large: 5.50, tempNote: "Hot / Iced" },
-  { id: "frappuccino", name: "Frappuccino", icon: FrappuccinoIcon, small: 5.50, large: 6.00, tempNote: "Iced only" },
+  { id: "frappuccino", name: "Coffee Frappuccino", icon: FrappuccinoIcon, small: 5.50, large: 6.00, tempNote: "Iced only" },
 ];
 
 const TEAS: MenuItem[] = [
@@ -488,7 +488,7 @@ export default function HomePage() {
           <SwirlCorner position="bottom-right" />
         </div>
         <LatteArtSwirl className="hero-latte-art" size={100} />
-        <span className="hero-badge">Spill the Beans</span>
+        <span className="hero-badge">NYC Coffee</span>
         <h1>Good coffee,<br /> <span className="wiggle">zero wait</span></h1>
         <p className="hero-sub">Order with your voice or text. Our AI barista takes your order in seconds.</p>
         <button onClick={() => setDrawerOpen(true)} className="hero-cta">Start Ordering <IconArrowRight size={16} /></button>

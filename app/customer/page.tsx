@@ -8,10 +8,9 @@ const MENU = {
   coffee: [
     { name: "Americano", small: 3.0, large: 4.0 },
     { name: "Latte", small: 4.0, large: 5.0 },
-    { name: "Cappuccino", small: 4.0, large: 5.0 },
     { name: "Cold Brew", small: 4.0, large: 5.0 },
     { name: "Mocha", small: 4.5, large: 5.5 },
-    { name: "Frappuccino", small: 5.5, large: 6.0 },
+    { name: "Coffee Frappuccino", small: 5.5, large: 6.0 },
   ],
   tea: [
     { name: "Black Tea", small: 3.0, large: 3.75 },

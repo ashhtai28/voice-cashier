@@ -1,11 +1,23 @@
 /* ══════════════════════════════════════
-   Owner Dashboard — Spill the Beans Theme
+   Owner Dashboard — NYC Coffee Theme
    ══════════════════════════════════════ */
 
 .dash {
   min-height: calc(100dvh - 48px);
   background: var(--oat);
   padding: 1rem;
+}
+@media (max-width: 480px) {
+  .dash {
+    padding: 0.5rem;
+  }
+  .dash-inner {
+    border-radius: 14px;
+  }
+  .dash-header {
+    border-radius: 14px 14px 0 0;
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 .dash-inner {

@@ -1,5 +1,5 @@
 /**
- * Centralized pricing matching the real Spill the Beans menu.
+ * Centralized pricing matching the NYC Coffee menu.
  * Used by metrics.ts and the customer receipt.
  */
 

@@ -5,6 +5,19 @@
   background: var(--oat);
   padding: 1rem;
 }
+@media (max-width: 480px) {
+  .orders-page {
+    padding: 0.5rem;
+  }
+  .orders-card {
+    border-radius: 14px;
+    min-height: calc(100dvh - 48px - 1rem);
+  }
+  .orders-header {
+    border-radius: 14px 14px 0 0;
+    padding: 0.5rem 0.75rem;
+  }
+}
 
 .orders-card {
   max-width: 960px;
