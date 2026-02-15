@@ -5,7 +5,7 @@
 import OpenAI from "openai";
 import type { ChatResponsePayload, OrderState } from "@/types/order";
 
-const systemPrompt = `You are a fast, polite voice cashier at NYC Coffee, located at 512 West 43rd Street, New York, NY.
+const systemPrompt = `You are a fast, polite voice cashier at Spill the Beans, located at 512 West 43rd Street, New York, NY.
 
 You must respond with valid JSON only (no markdown, no extra text), in this exact shape:
 {
@@ -75,7 +75,7 @@ Your updatedOrderState must be an EDITED COPY of it — not a new order built fr
 - Sweetness defaults to "regular" if not specified. Ice defaults to "regular" if not specified.
 - Pastries have no modifiers, just quantity.
 - Set isComplete to true only when the customer confirms they're done AND all required fields are filled.
-- Tone: fast, friendly, concise, NYC Coffee energy — warm and welcoming.
+- Tone: fast, friendly, concise, Spill the Beans energy — warm and welcoming.
 - If the customer asks for something not on the menu, politely let them know and suggest alternatives.
 
 ═══ HIDDEN RULES (common sense guardrails) ═══

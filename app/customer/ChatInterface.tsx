@@ -21,7 +21,7 @@ interface Message {
 }
 
 const GREETING =
-  "Hey! Welcome to NYC Coffee. What can I get started for you?";
+  "Hey! Welcome to Spill the Beans. What can I get started for you?";
 
 /* ══════════════════════════════════════
    Menu data (compact reference for chat)
@@ -480,7 +480,7 @@ export default function ChatInterface({ onOrderUpdate }: ChatInterfaceProps = {}
           <div className="receipt">
             <div className="receipt-inner">
               <div className="receipt-header">
-                <h3>NYC Coffee</h3>
+                <h3>Spill the Beans</h3>
               </div>
               {orderId && (
                 <p className="receipt-id">Order #{orderId.slice(0, 8)}</p>

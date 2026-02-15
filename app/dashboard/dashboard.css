@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════
-   Owner Dashboard — NYC Coffee Theme
+   Owner Dashboard — Spill the Beans Theme
    ══════════════════════════════════════ */
 
 .dash {
@@ -17,6 +17,13 @@
   .dash-header {
     border-radius: 14px 14px 0 0;
     padding: 0.5rem 0.75rem;
+  }
+  .dash-header-text h1 {
+    font-size: 1rem;
+  }
+  .kpi-card {
+    padding: 0.7rem 0.6rem 0.55rem;
+    border-radius: 12px;
   }
 }
 

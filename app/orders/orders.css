@@ -17,6 +17,21 @@
     border-radius: 14px 14px 0 0;
     padding: 0.5rem 0.75rem;
   }
+  .orders-header h1 {
+    font-size: 1rem;
+  }
+  .orders-list {
+    padding: 0.4rem;
+    gap: 0.4rem;
+  }
+  .order-card {
+    padding: 0.5rem 0.6rem;
+    border-radius: 10px;
+  }
+  .tab {
+    padding: 0.45rem 0.3rem;
+    font-size: 0.72rem;
+  }
 }
 
 .orders-card {

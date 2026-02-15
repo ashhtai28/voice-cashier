@@ -76,7 +76,7 @@ export default function DashboardPage() {
       {/* ── Header ── */}
       <header className="dash-header">
         <div className="dash-header-text">
-          <h1>NYC Coffee</h1>
+          <h1>Spill the Beans</h1>
           <span className="dash-subtitle">
             {range === "today" ? "Today's Pulse" : "All-Time Overview"}
           </span>

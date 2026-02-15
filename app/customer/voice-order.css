@@ -49,8 +49,26 @@
 /* ── Mobile: full-bleed card with small margin ── */
 @media (max-width: 767px) {
   .voice-order-layout {
-    padding: 0.6rem;
+    padding: 0.5rem;
     gap: 0;
+  }
+  .voice-chat-main {
+    border-radius: 14px;
+  }
+  .voice-chat-main .chat-container {
+    border-radius: 14px;
+  }
+  .voice-chat-main .chat-header {
+    border-radius: 14px 14px 0 0;
+    padding: 0.5rem 0.75rem;
+  }
+  .voice-chat-main .chat-input-area {
+    border-radius: 0 0 14px 14px;
+  }
+}
+@media (max-width: 480px) {
+  .voice-order-layout {
+    padding: 0.35rem;
   }
 }
 

@@ -1,7 +1,7 @@
 /**
  * Owner dashboard metrics. Deterministic calculations from order data.
  *
- * Metric rationale (why these matter to a NYC Coffee owner):
+ * Metric rationale (why these matter to a Spill the Beans owner):
  *
  * 1. REVENUE & ORDER COUNT — The absolute pulse. "How are we doing today?"
  * 2. AVERAGE ORDER VALUE (AOV) — Higher AOV = better upselling.

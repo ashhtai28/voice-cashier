@@ -17,7 +17,7 @@ export default function NavBar() {
   return (
     <nav className="global-nav">
       <Link href="/" className="nav-brand">
-        NYC Coffee
+        Spill the Beans
       </Link>
       <div className="nav-links">
         {NAV_ITEMS.map((item) => {

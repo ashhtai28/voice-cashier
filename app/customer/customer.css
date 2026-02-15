@@ -449,6 +449,36 @@
   50% { box-shadow: 0 0 0 8px rgba(192, 82, 74, 0); }
 }
 
+/* ── Mobile: tighter spacing ── */
+@media (max-width: 480px) {
+  .chat-messages {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+  .msg-bubble {
+    max-width: 88%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  .chat-input-area {
+    padding: 0.5rem 0.6rem;
+  }
+  .input-wrapper input {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.9rem;
+  }
+  .send-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.82rem;
+  }
+  .chat-header h1 {
+    font-size: 1rem;
+  }
+  .receipt-inner {
+    padding: 0.9rem;
+  }
+}
+
 /* Mobile safe area */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .chat-input-area {

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   Unified SVG Icon System — NYC Coffee
+   Unified SVG Icon System — Spill the Beans
    
    Clean, minimal line icons using the app's
    warm brown palette. All icons share a 24×24

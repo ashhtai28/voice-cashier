@@ -1,5 +1,5 @@
 /**
- * Business rules for the full NYC Coffee menu.
+ * Business rules for the full Spill the Beans menu.
  * All validation is deterministic — no LLM.
  *
  * Many rules are "hidden" — not on the menu but enforced by common sense:

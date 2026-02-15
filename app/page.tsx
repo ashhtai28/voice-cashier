@@ -488,7 +488,7 @@ export default function HomePage() {
           <SwirlCorner position="bottom-right" />
         </div>
         <LatteArtSwirl className="hero-latte-art" size={100} />
-        <span className="hero-badge">NYC Coffee</span>
+        <span className="hero-badge">Spill the Beans</span>
         <h1>Good coffee,<br /> <span className="wiggle">zero wait</span></h1>
         <p className="hero-sub">Order with your voice or text. Our AI barista takes your order in seconds.</p>
         <button onClick={() => setDrawerOpen(true)} className="hero-cta">Start Ordering <IconArrowRight size={16} /></button>

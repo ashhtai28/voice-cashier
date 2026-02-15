@@ -3,8 +3,8 @@ import NavBar from "./NavBar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NYC Coffee | AI Voice Ordering",
-  description: "AI voice cashier for NYC Coffee — order with your voice or text",
+  title: "Spill the Beans | AI Voice Ordering",
+  description: "AI voice cashier for Spill the Beans — order with your voice or text",
 };
 
 export default function RootLayout({
