@@ -1,0 +1,24 @@
+order_id,created_at,updated_at,status,item_type,item_name,size,temperature,milk,sweetness,ice_level,add_ons,quantity,item_price
+a1b2c3d4-0001-4000-8000-000000000001,2026-02-12 08:15:00,2026-02-12 08:18:00,completed,drink,latte,large,hot,oat,regular,,extra_espresso_shot,1,6.50
+a1b2c3d4-0001-4000-8000-000000000001,2026-02-12 08:15:00,2026-02-12 08:18:00,completed,pastry,plain_croissant,,,,,,,1,3.50
+a1b2c3d4-0002-4000-8000-000000000002,2026-02-12 08:22:00,2026-02-12 08:25:00,completed,drink,americano,small,iced,whole,no_sugar,regular,,1,3.00
+a1b2c3d4-0003-4000-8000-000000000003,2026-02-12 08:30:00,2026-02-12 08:34:00,completed,drink,cold_brew,large,iced,almond,less_sugar,less_ice,,1,5.75
+a1b2c3d4-0003-4000-8000-000000000003,2026-02-12 08:30:00,2026-02-12 08:34:00,completed,drink,matcha_latte,small,hot,oat,regular,,,1,4.50
+a1b2c3d4-0003-4000-8000-000000000003,2026-02-12 08:30:00,2026-02-12 08:34:00,completed,pastry,chocolate_croissant,,,,,,,2,8.00
+a1b2c3d4-0004-4000-8000-000000000004,2026-02-12 09:01:00,2026-02-12 09:03:00,in_progress,drink,mocha,large,hot,whole,extra_sugar,,caramel_syrup,1,6.00
+a1b2c3d4-0004-4000-8000-000000000004,2026-02-12 09:01:00,2026-02-12 09:03:00,in_progress,pastry,chocolate_chip_cookie,,,,,,,3,7.50
+a1b2c3d4-0005-4000-8000-000000000005,2026-02-12 09:10:00,2026-02-12 09:10:00,pending,drink,frappuccino,large,iced,whole,regular,regular,,1,6.00
+a1b2c3d4-0005-4000-8000-000000000005,2026-02-12 09:10:00,2026-02-12 09:10:00,pending,drink,latte,small,hot,skim,less_sugar,,,1,4.00
+a1b2c3d4-0006-4000-8000-000000000006,2026-02-12 09:15:00,2026-02-12 09:15:00,pending,drink,black_tea,small,hot,,regular,,,1,3.00
+a1b2c3d4-0006-4000-8000-000000000006,2026-02-12 09:15:00,2026-02-12 09:15:00,pending,drink,jasmine_tea,large,hot,,no_sugar,,,1,3.75
+a1b2c3d4-0006-4000-8000-000000000006,2026-02-12 09:15:00,2026-02-12 09:15:00,pending,pastry,banana_bread,,,,,,,1,3.00
+a1b2c3d4-0007-4000-8000-000000000007,2026-02-12 09:22:00,2026-02-12 09:22:00,pending,drink,lemon_green_tea,large,iced,,regular,extra_ice,,1,4.25
+a1b2c3d4-0007-4000-8000-000000000007,2026-02-12 09:22:00,2026-02-12 09:22:00,pending,drink,americano,large,hot,whole,regular,,hazelnut_syrup,1,4.50
+a1b2c3d4-0008-4000-8000-000000000008,2026-02-12 09:35:00,2026-02-12 09:38:00,completed,drink,cold_brew,small,iced,whole,regular,no_ice,,1,4.00
+a1b2c3d4-0008-4000-8000-000000000008,2026-02-12 09:35:00,2026-02-12 09:38:00,completed,pastry,plain_croissant,,,,,,,1,3.50
+a1b2c3d4-0008-4000-8000-000000000008,2026-02-12 09:35:00,2026-02-12 09:38:00,completed,pastry,chocolate_chip_cookie,,,,,,,2,5.00
+a1b2c3d4-0009-4000-8000-000000000009,2026-02-12 09:45:00,2026-02-12 09:47:00,in_progress,drink,matcha_latte,large,iced,almond,less_sugar,regular,extra_matcha_shot,1,6.00
+a1b2c3d4-0009-4000-8000-000000000009,2026-02-12 09:45:00,2026-02-12 09:47:00,in_progress,drink,mocha,small,hot,oat,regular,,,1,5.00
+a1b2c3d4-0010-4000-8000-000000000010,2026-02-12 10:00:00,2026-02-12 10:00:00,pending,drink,frappuccino,small,iced,whole,extra_sugar,regular,caramel_syrup;hazelnut_syrup,1,6.50
+a1b2c3d4-0010-4000-8000-000000000010,2026-02-12 10:00:00,2026-02-12 10:00:00,pending,pastry,chocolate_croissant,,,,,,,1,4.00
+a1b2c3d4-0010-4000-8000-000000000010,2026-02-12 10:00:00,2026-02-12 10:00:00,pending,pastry,banana_bread,,,,,,,2,6.00
