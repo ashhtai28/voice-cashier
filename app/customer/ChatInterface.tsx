@@ -155,7 +155,8 @@ export default function ChatInterface({ onOrderUpdate }: ChatInterfaceProps = {}
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const streamRef = useRef<MediaStream | null>(null);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = useRef<any>(null);
 
   // Refs so callbacks always read the latest state
   const messagesRef = useRef(messages);
@@ -360,7 +361,8 @@ export default function ChatInterface({ onOrderUpdate }: ChatInterfaceProps = {}
       recognition.continuous = true;
       recognition.interimResults = true;
       recognition.lang = "en-US";
-      recognition.onresult = (event: SpeechRecognitionEvent) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      recognition.onresult = (event: any) => {
         let interim = "";
         for (let i = 0; i < event.results.length; i++) {
           interim += event.results[i][0].transcript;
