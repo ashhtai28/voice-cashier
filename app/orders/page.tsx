@@ -25,14 +25,14 @@ const NEXT_STATUS: Record<Status, Status | null> = {
 };
 
 const STATUS_LABEL: Record<Status, string> = {
-  pending: "Pending",
-  in_progress: "In Progress",
-  completed: "Completed",
+  pending: "New",
+  in_progress: "Brewing",
+  completed: "Done",
 };
 
 const STATUS_ACTION: Record<Status, string> = {
-  pending: "Start Making",
-  in_progress: "Mark Completed",
+  pending: "Start Brewing",
+  in_progress: "Mark Done",
   completed: "",
 };
 
@@ -128,19 +128,19 @@ export default function OrdersPage() {
           className={`tab pending ${filter === "pending" ? "active" : ""}`}
           onClick={() => setFilter("pending")}
         >
-          Pending <span className="tab-count">{counts.pending}</span>
+          New <span className="tab-count">{counts.pending}</span>
         </button>
         <button
           className={`tab in-progress ${filter === "in_progress" ? "active" : ""}`}
           onClick={() => setFilter("in_progress")}
         >
-          In Progress <span className="tab-count">{counts.in_progress}</span>
+          Brewing <span className="tab-count">{counts.in_progress}</span>
         </button>
         <button
           className={`tab completed ${filter === "completed" ? "active" : ""}`}
           onClick={() => setFilter("completed")}
         >
-          Completed <span className="tab-count">{counts.completed}</span>
+          Done <span className="tab-count">{counts.completed}</span>
         </button>
       </nav>
 

@@ -148,10 +148,10 @@
   transition: border-color 0.15s;
 }
 .order-card.pending {
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--espresso);
 }
 .order-card.in_progress {
-  border-left: 3px solid var(--toffee);
+  border-left: 3px solid var(--hazelnut);
 }
 .order-card.completed {
   border-left: 3px solid var(--sage);
@@ -182,12 +182,12 @@
   letter-spacing: 0.04em;
 }
 .status-badge.pending {
-  background: var(--accent-light, #ddc1b8);
-  color: var(--espresso);
+  background: var(--espresso);
+  color: var(--cream);
 }
 .status-badge.in_progress {
-  background: var(--peach);
-  color: var(--espresso);
+  background: var(--hazelnut);
+  color: var(--cream);
 }
 .status-badge.completed {
   background: var(--sage);
@@ -253,7 +253,7 @@
   transform: none;
 }
 .order-action.in_progress {
-  background: var(--toffee);
+  background: var(--hazelnut);
   color: var(--foam);
 }
 .order-action.completed {

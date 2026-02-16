@@ -137,8 +137,8 @@ export default function DashboardPage() {
           <section className="dash-card">
             <h2 className="card-title">Order Status</h2>
             <div className="status-row">
-              <StatusPill label="Pending" count={metrics.statusCounts.pending} color="var(--accent)" />
-              <StatusPill label="Making" count={metrics.statusCounts.in_progress} color="var(--toffee)" />
+              <StatusPill label="New" count={metrics.statusCounts.pending} color="var(--espresso)" />
+              <StatusPill label="Brewing" count={metrics.statusCounts.in_progress} color="var(--hazelnut)" />
               <StatusPill label="Done" count={metrics.statusCounts.completed} color="var(--sage)" />
             </div>
             {metrics.statusCounts.pending > 3 && (
