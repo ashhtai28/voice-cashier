@@ -378,8 +378,9 @@
   opacity: 0.6;
 }
 .input-wrapper.recording input {
-  color: var(--dark-roast);
-  font-style: italic;
+  color: var(--espresso);
+  font-style: normal;
+  font-weight: 500;
 }
 .input-wrapper.recording input::placeholder {
   color: #c0524a;

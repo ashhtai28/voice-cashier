@@ -149,11 +149,13 @@ export default function ChatInterface({ onOrderUpdate }: ChatInterfaceProps = {}
   const [isRecording, setIsRecording] = useState(false);
   const [micStatus, setMicStatus] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [liveTranscript, setLiveTranscript] = useState("");
 
   const chatEndRef = useRef<HTMLDivElement>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const streamRef = useRef<MediaStream | null>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   // Refs so callbacks always read the latest state
   const messagesRef = useRef(messages);
@@ -346,7 +348,30 @@ export default function ChatInterface({ onOrderUpdate }: ChatInterfaceProps = {}
 
     mediaRecorderRef.current = recorder;
     setIsRecording(true);
+    setLiveTranscript("");
     recorder.start();
+
+    // Start browser SpeechRecognition for live transcript
+    const SpeechRecognition =
+      (window as unknown as { SpeechRecognition?: typeof window.SpeechRecognition }).SpeechRecognition ||
+      (window as unknown as { webkitSpeechRecognition?: typeof window.SpeechRecognition }).webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.lang = "en-US";
+      recognition.onresult = (event: SpeechRecognitionEvent) => {
+        let interim = "";
+        for (let i = 0; i < event.results.length; i++) {
+          interim += event.results[i][0].transcript;
+        }
+        setLiveTranscript(interim);
+      };
+      recognition.onerror = () => { /* ignore — Whisper handles final */ };
+      recognition.onend = () => { /* will restart if still recording */ };
+      recognitionRef.current = recognition;
+      recognition.start();
+    }
   }, [isRecording, isLoading, isComplete, handleSend]);
 
   const stopRecording = useCallback(() => {
@@ -356,6 +381,13 @@ export default function ChatInterface({ onOrderUpdate }: ChatInterfaceProps = {}
     }
     mediaRecorderRef.current = null;
     setIsRecording(false);
+    setLiveTranscript("");
+
+    // Stop browser speech recognition
+    if (recognitionRef.current) {
+      recognitionRef.current.abort();
+      recognitionRef.current = null;
+    }
   }, []);
 
   /* ── New order reset ── */
@@ -557,14 +589,15 @@ export default function ChatInterface({ onOrderUpdate }: ChatInterfaceProps = {}
             >
               <input
                 type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
+                value={isRecording ? liveTranscript : input}
+                onChange={(e) => { if (!isRecording) setInput(e.target.value); }}
                 placeholder={
                   isRecording
-                    ? "Recording… tap stop when done"
+                    ? "Listening…"
                     : "Type or tap the mic…"
                 }
-                disabled={isLoading || isRecording}
+                readOnly={isRecording}
+                disabled={isLoading}
               />
               <button
                 type="button"
